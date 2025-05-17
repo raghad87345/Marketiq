@@ -1,20 +1,34 @@
 body {
   font-family: 'Tajawal', sans-serif;
   background: #f8f9fa;
-  margin: 0;
   color: #222;
+  margin: 0;
   direction: rtl;
 }
 
 header {
-  background: #0a1733;
+  background: #0a1d3c;
   color: white;
   text-align: center;
   padding: 2rem;
+  border-bottom: 4px solid #f7c948;
 }
 
-header h1 {
-  margin-bottom: 0.5rem;
+..logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logo-container img {
+  height: 60px;
+  border-radius: 50%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
   color: #f7c948;
 }
 
@@ -24,97 +38,79 @@ main {
   padding: 2rem;
 }
 
-section {
+.tool-section {
   background: white;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.05);
-}
-
-h2 {
-  color: #0a1733;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 label {
-  font-weight: bold;
-  margin-top: 1rem;
   display: block;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 
-input, select, textarea {
+input[type="file"],
+input[type="text"],
+select {
   width: 100%;
-  padding: 0.7rem;
+  padding: 0.8rem;
   font-size: 1rem;
-  margin-top: 0.4rem;
-  border-radius: 6px;
   border: 1px solid #ccc;
-}
-
-textarea {
-  height: 100px;
-  resize: none;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
 .btn {
   background: #f7c948;
-  color: #0a1733;
-  padding: 0.8rem;
+  color: #0a1d3c;
+  padding: 1rem;
   width: 100%;
   font-weight: bold;
   border: none;
   border-radius: 6px;
-  margin-top: 1rem;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
-  background: #ffd95c;
+  background: #ffd85f;
 }
 
 .result {
   background: #f1f1f1;
   padding: 1rem;
-  margin-top: 1rem;
   border-radius: 6px;
+  white-space: pre-line;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 .hidden {
   display: none;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.resources {
+  list-style: none;
+  padding: 0;
 }
 
-.card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 1rem;
-  width: 300px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+.resources li {
+  margin-bottom: 0.8rem;
 }
 
-.card h4 {
-  margin-top: 0;
-}
-
-.card a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #0a1733;
+.resources a {
+  color: #0a1d3c;
   font-weight: bold;
+  text-decoration: none;
 }
 
 footer {
-  background: #0a1733;
+  background: #0a1d3c;
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
 }

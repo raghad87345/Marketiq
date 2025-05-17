@@ -1,67 +1,73 @@
 // تحليل الفيديو
-document.getElementById('analyzeForm').addEventListener('submit', function (e) {
+document.getElementById("uploadForm").addEventListener("submit", function (e) {
   e.preventDefault();
-  const file = document.getElementById('videoInput').files[0];
-  const result = document.getElementById('videoResult');
 
-  if (!file || !file.type.startsWith("video")) {
-    result.innerText = "⚠️ يرجى رفع فيديو صالح.";
-    result.classList.remove("hidden");
+  const file = document.getElementById("videoFile").files[0];
+  const topic = document.getElementById("topic").value.trim();
+  const resultBox = document.getElementById("resultBox");
+
+  if (!file || !topic) {
+    alert("يرجى رفع فيديو وكتابة وصف.");
     return;
   }
 
-  const sizeMB = (file.size / 1024 / 1024).toFixed(2);
-  const analysis = sizeMB < 5
-    ? "✅ الفيديو ممتاز للمنصات القصيرة. اجذب الانتباه في أول 3 ثواني!"
-    : "⚠️ الفيديو طويل نسبيًا، حاول اختصاره للحصول على تفاعل أعلى.";
+  const formData = new FormData();
+  formData.append("video", file);
+  formData.append("topic", topic);
 
-  result.innerHTML = `📂 الحجم: ${sizeMB} MB<br><strong>${analysis}</strong>`;
-  result.classList.remove("hidden");
+  resultBox.innerHTML = "⏳ جاري التحليل...";
+  resultBox.classList.remove("hidden");
+
+  fetch("https://YOUR-BACKEND-URL.onrender.com/analyze", {
+    method: "POST",
+    body: formData,
+  })
+    .then(res => res.json())
+    .then(data => {
+      resultBox.innerHTML = `
+📹 المدة: ${data.duration}
+🎥 الدقة: ${data.resolution}
+🔊 صوت؟ ${data.audio}
+⭐ نسبة الانتشار: ${data.score}/100
+
+🎯 هوك مقترح:
+${data.hook}
+
+🛠️ نصيحة:
+${data.tip}
+      `;
+    })
+    .catch(() => {
+      resultBox.innerHTML = "❌ خطأ في الاتصال بالخادم.";
+    });
 });
 
-// توليد الكابتشن
-function generateCaption() {
-  const topic = document.getElementById("captionInput").value.trim();
+// توليد الكابتشن (محلي مؤقتًا)
+document.getElementById("captionForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const topic = document.getElementById("captionTopic").value.trim();
   const tone = document.getElementById("tone").value;
   const length = document.getElementById("length").value;
   const result = document.getElementById("captionResult");
 
-  if (!topic) {
-    alert("يرجى كتابة محتوى الفيديو.");
-    return;
-  }
-
-  let toneText = "";
-  if (tone === "تحفيزية") toneText = "💪 استمر، أنت على الطريق الصحيح.";
-  if (tone === "معلوماتية") toneText = "🧠 محتوى مفيد، لا يفوتك.";
-  if (tone === "خفيفة") toneText = "😄 محتوى خفيف وظريف!";
-  if (tone === "رسمية") toneText = "✅ شرح موثوق وبأسلوب واضح.";
-
-  let close = "";
-  if (length === "قصير") close = "📌 لا تنسى تحفظ الفيديو.";
-  if (length === "متوسط") close = "📌 شارك رأيك وساهم بالنقاش.";
-  if (length === "طويل") close = "📌 اكتب تعليق، وشارك الفيديو مع المهتمين.";
-
-  result.innerText = `🎬 ${topic}\n${toneText}\n${close}`;
   result.classList.remove("hidden");
-}
+  result.innerText = `✍️ كابتشن (${tone} - ${length}):
 
-// توليد الهاشتاقات
-function generateHashtags() {
-  const topic = document.getElementById("hashtagInput").value.toLowerCase();
-  const platform = document.getElementById("platform").value;
+${topic} ... لا تفوّت التفاصيل – خلك جاهز للمفاجأة!`;
+});
+
+// توليد الهاشتاقات (محلي مؤقتًا)
+document.getElementById("hashtagForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const topic = document.getElementById("hashtagTopic").value.trim();
   const result = document.getElementById("hashtagResult");
 
-  let tags = ["#محتوى", "#ابداع", "#فيديو"];
-
-  if (topic.includes("تسويق")) tags.push("#تسويق", "#تسويق_رقمي");
-  if (topic.includes("طبخ")) tags.push("#طبخ", "#اكل");
-  if (topic.includes("تعليم")) tags.push("#تعليم", "#معلومة");
-  if (topic.includes("تحفيز")) tags.push("#تحفيز", "#تطوير_الذات");
-
-  if (platform === "تيك توك") tags.push("#foryou", "#fyp");
-  if (platform === "إنستقرام") tags.push("#explore", "#reels");
-
-  result.innerText = tags.join(" ");
   result.classList.remove("hidden");
-}
+  result.innerText = `📌 هاشتاقات مقترحة:
+#${topic.replace(/\\s+/g, '')}
+#${topic.split(" ")[0]}
+#محتوى_${topic.slice(0, 3)}
+#فيديو_${new Date().getFullYear()}`;
+});
