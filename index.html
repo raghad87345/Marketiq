@@ -1,93 +1,113 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Marketiq – أدوات تسويقية ذكية</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Marketiq – أدوات تسويق ذكية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6dc90c1f07.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
+<!-- شاشة البداية -->
+<div id="splash">
   <img src="https://i.ibb.co/tpk793k6/marketiq-logo.png" alt="Marketiq Logo" />
-  <h1>Marketiq</h1>
 </div>
-  <p>حلل، صمّم، وانشر بثقة!</p>
-</header>
-
-<main>
-
-  <!-- أداة تحليل الفيديو -->
-  <section class="tool-section">
-    <h2>📊 تحليل الفيديو قبل النشر</h2>
-    <form id="uploadForm">
-      <label for="videoFile">ارفع الفيديو</label>
-      <input type="file" id="videoFile" accept="video/*" required>
-
-      <label for="topic">عن إيش الفيديو؟</label>
-      <input type="text" id="topic" placeholder="مثلاً: تمرين، وصفة، فلوق" required>
-
-      <button type="submit" class="btn">حلل الفيديو</button>
-    </form>
-
-    <div id="resultBox" class="result hidden"></div>
-  </section>
-
-  <!-- أداة الكابتشن -->
-  <section class="tool-section">
-    <h2>✍️ أداة توليد الكابتشن</h2>
-    <form id="captionForm">
-      <label for="captionTopic">عن إيش المنشور؟</label>
-      <input type="text" id="captionTopic" placeholder="مثلاً: إعلان منتج جديد" required>
-
-      <label for="tone">نبرة النص</label>
-      <select id="tone">
-        <option value="رسمية">رسمية</option>
-        <option value="تسويقية">تسويقية</option>
-        <option value="عاطفية">عاطفية</option>
-        <option value="مضحكة">مضحكة</option>
-      </select>
-
-      <label for="length">طول الكابتشن</label>
-      <select id="length">
-        <option value="قصير">قصير</option>
-        <option value="متوسط">متوسط</option>
-        <option value="طويل">طويل</option>
-      </select>
-
-      <button type="submit" class="btn">ولّد الكابتشن</button>
-    </form>
-    <div id="captionResult" class="result hidden"></div>
-  </section>
-
-  <!-- أداة الهاشتاق -->
-  <section class="tool-section">
-    <h2>#️⃣ أداة توليد الهاشتاقات</h2>
-    <form id="hashtagForm">
-      <label for="hashtagTopic">عن إيش المحتوى؟</label>
-      <input type="text" id="hashtagTopic" placeholder="مثلاً: محتوى عن المكياج أو التسويق" required>
-      <button type="submit" class="btn">ولّد الهاشتاقات</button>
-    </form>
-    <div id="hashtagResult" class="result hidden"></div>
-  </section>
-
-  <!-- قسم الكتب والمقالات -->
-  <section class="tool-section">
-    <h2>📚 كتب ومقالات عربية مجانية</h2>
-    <ul class="resources">
-      <li><a href="https://drive.google.com/drive/folders/1YXTO5E0XsC541vzeCg3yyqpqKbeH_GR_?usp=sharing" target="_blank">التسويق بالمحتوى– PDF</a></li>
-      <li><a href="https://www.arabmarketingacademy.com/blog" target="_blank">مدونة الأكاديمية العربية للتسويق</a></li>
-      <li><a href="https://drive.google.com/drive/folders/1YXTO5E0XsC541vzeCg3yyqpqKbeH_GR_?usp=sharing" target="_blank">مبادئ التسويق الالكتروني</a></li>
-      <li><a href="https://www.manaraa.com/post/10764" target="_blank">مقال: كيف تسوق مشروعك الناشئ</a></li>
+ <!-- شريط التنقل -->
+  <nav class="navbar">
+    <div class="nav-logo">Marketiq</div>
+    <ul class="nav-links">
+      <li><a href="#video-analysis">تحليل الفيديو</a></li>
+      <li><a href="#caption-tool">الكابتشن</a></li>
+      <li><a href="#hashtag-tool">الهاشتاقات</a></li>
+      <li><a href="#library">المقالات</a></li>
+      <li><a href="#books">الكتب</a></li>
     </ul>
-  </section>
+  </nav
 
-</main>
+ id="main-content" class="hidden">
+  <header>
+    <div class="logo-container">
+      <img src="https://i.ibb.co/tpk793k6/marketiq-logo.png" alt="Marketiq Logo" />
+      <h1>Marketiq</h1>
+    </div>
+    <h2>منصة أدوات تسويق ذكية للمحترفين</h2>
+  </header>
 
-<footer>
-  <p>© 2025 Marketiq. جميع الحقوق محفوظة</p>
-</footer>
+  <main>
+    <!-- تحليل الفيديو -->
+    <section id="video-analysis" class="tool-section">
+      <h2>📊 تحليل الفيديو</h2>
+      <form id="uploadForm">
+        <label>ارفع الفيديو:</label>
+        <input type="file" id="videoFile" accept="video/*" required />
+        <label>عن إيش الفيديو؟</label>
+        <input type="text" id="topic" placeholder="مثلاً: روتين صباحي، تمرين، وصفة" required />
+        <button type="submit" class="btn">ابدأ التحليل</button>
+      </form>
+      <div id="resultBox" class="result hidden"></div>
+    </section>
+
+    <!-- توليد الكابتشن -->
+    <section id="caption-tool" class="tool-section">
+      <h2>✍️ توليد الكابتشن</h2>
+      <form id="captionForm">
+        <label>عن إيش المنشور؟</label>
+        <input type="text" id="captionTopic" required />
+        <label>نبرة النص:</label>
+        <select id="tone">
+          <option value="رسمية">رسمية</option>
+          <option value="تسويقية">تسويقية</option>
+          <option value="عاطفية">عاطفية</option>
+          <option value="مضحكة">مضحكة</option>
+        </select>
+        <label>طول الكابتشن:</label>
+        <select id="length">
+          <option value="قصير">قصير</option>
+          <option value="متوسط">متوسط</option>
+          <option value="طويل">طويل</option>
+        </select>
+        <button type="submit" class="btn">ولّد الكابتشن</button>
+      </form>
+      <div id="captionResult" class="result hidden"></div>
+    </section>
+
+    <!-- توليد الهاشتاقات -->
+    <section id="hashtag-tool" class="tool-section">
+      <h2>#️⃣ توليد الهاشتاقات</h2>
+      <form id="hashtagForm">
+        <label>عن إيش المحتوى؟</label>
+        <input type="text" id="hashtagTopic" required />
+        <button type="submit" class="btn">ولّد الهاشتاقات</button>
+      </form>
+      <div id="hashtagResult" class="result hidden"></div>
+    </section>
+
+    <!-- المقالات -->
+    <section id="library" class="tool-section">
+      <h2>📚 مقالات عن التسويق بالمحتوى</h2>
+      <ul class="resources">
+        <li><a href="https://www.manaraa.com/post/10764" target="_blank">كيف تسوّق مشروعك الناشئ؟</a></li>
+        <li><a href="https://www.arabmarketingacademy.com/blog" target="_blank">مدونة الأكاديمية العربية للتسويق</a></li>
+        <li><a href="https://blog.hubspot.com/marketing/marketing-strategy" target="_blank">ما هي استراتيجية التسويق؟ (مترجم)</a></li>
+      </ul>
+    </section>
+
+    <!-- الكتب -->
+    <section class="tool-section">
+      <h2>📘 كتب عربية عن التسويق</h2>
+      <ul class="resources">
+        <li><a href="https://drive.google.com/drive/folders/1YXTO5E0XsC541vzeCg3yyqpqKbeH_GR_?usp=sharing" target="_blank">مبادئ التسويق الإلكتروني – PDF</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1YXTO5E0XsC541vzeCg3yyqpqKbeH_GR_?usp=sharing" target="_blank">  – التسويق بالمحتوى </a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Marketiq – أدوات تسويقية للمحترفين</p>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 </body>
