@@ -1,0 +1,120 @@
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  color: #222;
+  direction: rtl;
+}
+
+header {
+  background: #0a1733;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  color: #f7c948;
+}
+
+main {
+  max-width: 750px;
+  margin: auto;
+  padding: 2rem;
+}
+
+section {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #0a1733;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 1rem;
+  display: block;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.btn {
+  background: #f7c948;
+  color: #0a1733;
+  padding: 0.8rem;
+  width: 100%;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ffd95c;
+}
+
+.result {
+  background: #f1f1f1;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+}
+
+.card h4 {
+  margin-top: 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #0a1733;
+  font-weight: bold;
+}
+
+footer {
+  background: #0a1733;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}

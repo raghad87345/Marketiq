@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>أدوات المسوق العربي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎯 أدوات المسوق العربي</h1>
+
+</header>
+
+<main>
+
+  <!-- تحليل الفيديو -->
+  <section>
+    <h2>🔍 تحليل الفيديو</h2>
+    <form id="analyzeForm">
+      <input type="file" id="videoInput" accept="video/*" required>
+      <button class="btn">تحليل</button>
+    </form>
+    <div id="videoResult" class="result hidden"></div>
+  </section>
+
+  <!-- كتابة الكابتشن -->
+  <section>
+    <h2>✍️ كتابة الكابتشن</h2>
+    <textarea id="captionInput" placeholder="عن ماذا يتحدث الفيديو؟"></textarea>
+    <label for="tone">نبرة الكابتشن:</label>
+    <select id="tone">
+      <option value="تحفيزية">تحفيزية</option>
+      <option value="معلوماتية">معلوماتية</option>
+      <option value="خفيفة">خفيفة</option>
+      <option value="رسمية">رسمية</option>
+    </select>
+    <label for="length">طول الكابتشن:</label>
+    <select id="length">
+      <option value="قصير">قصير</option>
+      <option value="متوسط">متوسط</option>
+      <option value="طويل">طويل</option>
+    </select>
+    <button class="btn" onclick="generateCaption()">✨ توليد</button>
+    <div id="captionResult" class="result hidden"></div>
+  </section>
+
+  <!-- توليد الهاشتاقات -->
+  <section>
+    <h2>#️⃣ توليد الهاشتاقات</h2>
+    <input type="text" id="hashtagInput" placeholder="اكتب موضوع الفيديو">
+    <select id="platform">
+      <option value="تيك توك">تيك توك</option>
+      <option value="إنستقرام">إنستقرام</option>
+    </select>
+    <button class="btn" onclick="generateHashtags()">⚡ توليد</button>
+    <div id="hashtagResult" class="result hidden"></div>
+  </section>
+
+  <!-- الكتب -->
+  <section>
+    <h2>📚 كتب تسويق عربية مجانية</h2>
+    <div class="grid">
+      <div class="card">
+        <h4> مبادئ التسويق الالكتروني</h4>
+      
+        <a href="https://drive.google.com/drive/folders/1YXTO5E0XsC541vzeCg3yyqpqKbeH_GR_?usp=sharing" target="_blank">📥 تحميل</a>
+      </div>
+      <div class="card">
+        <h4>كتاب أسرار التسويق بالمحتوى في البراندات المتميزة</h4>
+        <p>منصة مهارة</p>
+        <a href="https://drive.google.com/drive/folders/1YXTO5E0XsC541vzeCg3yyqpqKbeH_GR_?usp=sharing/" target="_blank">📘 قراءة</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- المقالات -->
+  <section>
+    <h2>📝 مقالات تسويقية عربية</h2>
+    <div class="grid">
+      <div class="card">
+        <h4>التسويق ما بعد الجامعة</h4>
+        <p>ContentMarketingArabic</p>
+        <a href="https://www.eltasweeqelyoum.com/marketing-career-after-university/" target="_blank">📖 قراءة</a>
+      </div>
+      <div class="card">
+        <h4>كتابة المحتوى التسويقي </h4>
+      
+        <a href="https://www.eltasweeqelyoum.com/content-marketing-lessons/" target="_blank">📖 قراءة</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 أدوات المسوق العربي</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
