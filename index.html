@@ -1,114 +1,164 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>أثر | الرئيسية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="splash">
+    <img src="https://i.postimg.cc/mkvvF9v5/D36-AE168-5-BA8-411-A-8-E9-D-33-F0991-CB153.png" alt="شعار أثر" class="splash-logo" />
+  </div>
+<div class="logo">
+    <img src="https://i.postimg.cc/mkvvF9v5/D36-AE168-5-BA8-411-A-8-E9-D-33-F0991-CB153.png" alt="شعار أثر" />
+  </div>
+  <div id="main-content" style="display:none">
+    <header>
+      
+    </header>
+
+    <section class="hero">
+      <h1>نصنع لك نموًا حقيقيًا بمحتوى يبيع بدون إعلان</h1>
+      <button onclick="redirectToContact()">احجز استشارتك المجانية</button>
+    </section>
+
+    
+    </section>
+
+   
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+<section class="form-section">
+      <h2>هل تود أن نتواصل معك؟</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="tel" placeholder="رقم الجوال" required>
+        <button type="submit">إرسال</button>
+      </form>
+  </header>
+
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>من نحن | أثر</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    
+    <nav>
+      <ul>
+       
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>من نحن</h1>
+    <p>نحن "أثر" — شركة متخصصة في التسويق بالمحتوى العضوي تساعد المشاريع والبراندات على النمو بدون إعلان.</p>
+  </main>
+
+</body>
+</html>
+
+
+<!-- services.html -->
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Marketiq – أدوات تسويق ذكية</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خدماتنا | أثر</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/6dc90c1f07.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-<!-- شاشة البداية -->
-<div id="splash">
-  <img src="https://i.ibb.co/tpk793k6/marketiq-logo.png" alt="Marketiq Logo" />
-</div>
- <!-- شريط التنقل -->
-  <nav class="navbar">
-    <div class="nav-logo">Marketiq</div>
-    <ul class="nav-links">
-      <li><a href="#video-analysis">تحليل الفيديو</a></li>
-      <li><a href="#caption-tool">الكابتشن</a></li>
-      <li><a href="#hashtag-tool">الهاشتاقات</a></li>
-      <li><a href="#library">المقالات</a></li>
-      <li><a href="#books">الكتب</a></li>
-    </ul>
-  </nav
-
- id="main-content" class="hidden">
   <header>
-    <div class="logo-container">
-      <img src="https://i.ibb.co/tpk793k6/marketiq-logo.png" alt="Marketiq Logo" />
-      <h1>Marketiq</h1>
-    </div>
-    <h2>منصة أدوات تسويق ذكية للمحترفين</h2>
+   
+    
   </header>
 
-  <main>
-    <!-- تحليل الفيديو -->
-    <section id="video-analysis" class="tool-section">
-      <h2>📊 تحليل الفيديو</h2>
-      <form id="uploadForm">
-        <label>ارفع الفيديو:</label>
-        <input type="file" id="videoFile" accept="video/*" required />
-        <label>عن إيش الفيديو؟</label>
-        <input type="text" id="topic" placeholder="مثلاً: روتين صباحي، تمرين، وصفة" required />
-        <button type="submit" class="btn">ابدأ التحليل</button>
-      </form>
-      <div id="resultBox" class="result hidden"></div>
-    </section>
+  <main class="content">
+    <h1 class="centered">خدماتنا</h1>
 
-    <!-- توليد الكابتشن -->
-    <section id="caption-tool" class="tool-section">
-      <h2>✍️ توليد الكابتشن</h2>
-      <form id="captionForm">
-        <label>عن إيش المنشور؟</label>
-        <input type="text" id="captionTopic" required />
-        <label>نبرة النص:</label>
-        <select id="tone">
-          <option value="رسمية">رسمية</option>
-          <option value="تسويقية">تسويقية</option>
-          <option value="عاطفية">عاطفية</option>
-          <option value="مضحكة">مضحكة</option>
-        </select>
-        <label>طول الكابتشن:</label>
-        <select id="length">
-          <option value="قصير">قصير</option>
-          <option value="متوسط">متوسط</option>
-          <option value="طويل">طويل</option>
-        </select>
-        <button type="submit" class="btn">ولّد الكابتشن</button>
-      </form>
-      <div id="captionResult" class="result hidden"></div>
-    </section>
+    <div class="services-grid">
 
-    <!-- توليد الهاشتاقات -->
-    <section id="hashtag-tool" class="tool-section">
-      <h2>#️⃣ توليد الهاشتاقات</h2>
-      <form id="hashtagForm">
-        <label>عن إيش المحتوى؟</label>
-        <input type="text" id="hashtagTopic" required />
-        <button type="submit" class="btn">ولّد الهاشتاقات</button>
-      </form>
-      <div id="hashtagResult" class="result hidden"></div>
-    </section>
+      <div class="service-card">
+        <i class="fas fa-magnifying-glass-chart icon"></i>
+        <h3>تحليل حسابات السوشيال ميديا</h3>
+        <p>نقوم بتحليل شامل لحسابك ونقدم لك تقريرًا واضحًا بنقاط القوة والضعف والحلول الممكنة.</p>
+      </div>
 
-    <!-- المقالات -->
-    <section id="library" class="tool-section">
-      <h2>📚 مقالات عن التسويق بالمحتوى</h2>
-      <ul class="resources">
-        <li><a href="https://www.manaraa.com/post/10764" target="_blank">كيف تسوّق مشروعك الناشئ؟</a></li>
-        <li><a href="https://www.arabmarketingacademy.com/blog" target="_blank">مدونة الأكاديمية العربية للتسويق</a></li>
-        <li><a href="https://blog.hubspot.com/marketing/marketing-strategy" target="_blank">ما هي استراتيجية التسويق؟ (مترجم)</a></li>
-      </ul>
-    </section>
+      <div class="service-card">
+        <i class="fas fa-pen-nib icon"></i>
+        <h3>خطة محتوى مخصصة</h3>
+        <p>نجهز لك خطة محتوى عملية ومخصصة حسب جمهورك وأهداف مشروعك.</p>
+      </div>
 
-    <!-- الكتب -->
-    <section class="tool-section">
-      <h2>📘 كتب عربية عن التسويق</h2>
-      <ul class="resources">
-        <li><a href="https://drive.google.com/drive/folders/1YXTO5E0XsC541vzeCg3yyqpqKbeH_GR_?usp=sharing" target="_blank">مبادئ التسويق الإلكتروني – PDF</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1YXTO5E0XsC541vzeCg3yyqpqKbeH_GR_?usp=sharing" target="_blank">  – التسويق بالمحتوى </a></li>
-      </ul>
-    </section>
+      <div class="service-card">
+        <i class="fas fa-chart-line icon"></i>
+        <h3>إدارة حسابات التواصل</h3>
+        <p>ننشئ وننشر محتوى جذاب، وندير التفاعل بشكل احترافي يعكس هوية البراند.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-handshake icon"></i>
+        <h3>استشارات تسويقية</h3>
+        <p>جلسات 1:1 مع خبير تسويق لمساعدتك في اتخاذ قرارات ذكية وفعالة.</p>
+      </div>
+
+    </div>
+  </main>
+<!-- blog.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المدونة | أثر</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+   
+    <nav>
+     
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>مقالاتنا</h1>
+    <article>
+      <h2>كيف تصنع محتوى يبيع؟</h2>
+      <p>افهم جمهورك، قدّم قيمة، كن متّسقًا.</p>
+    </article>
   </main>
 
-  <footer>
-    <p>© 2025 Marketiq – أدوات تسويقية للمحترفين</p>
-  </footer>
-</div>
+ 
+</body>
+</html>
 
-<script src="script.js"></script>
+
+
+    <section class="form-section">
+      <h2>هل تود أن نتواصل معك؟</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="tel" placeholder="رقم الجوال" required>
+        <button type="submit">إرسال</button>
+      </form>
+  </header>
+
+
+
+  <footer><p>© 2025 أثر. جميع الحقوق محفوظة.</p></footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
